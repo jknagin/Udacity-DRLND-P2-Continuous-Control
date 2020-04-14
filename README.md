@@ -35,4 +35,4 @@ The task is episodic, and in order to solve the environment, the agents must get
 
 1. Place the file in the root directory of this repo and unzip the file.
 
-1. Follow the instructions in the project [report](https://github.com/jknagin/Udacity-DRLND-P1-Navigation/blob/master/Report.md#running-navigationipynb) and the main Jupyter [notebook](https://github.com/jknagin/Udacity-DRLND-P1-Navigation/blob/master/Navigation.ipynb) to get started with training the agent.
+1. Follow the instructions in the project [report](https://github.com/jknagin/Udacity-DRLND-P2-Continuous-Control/blob/master/REPORT.md#running-continuous_controlipynb) and the main Jupyter [notebook](https://github.com/jknagin/Udacity-DRLND-P2-Continuous-Control/blob/master/Continuous_Control.ipynb) to get started with training the agent.
