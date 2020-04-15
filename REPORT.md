@@ -29,7 +29,7 @@ More information about the PPO algorithm, including a precise definition of the 
 ### Descriptions of each file
 #### `ppo_agent.py`
 Implements the PPO, actor-critic style Agent class, which provides the following methods:
-* `__init__`
+* `__init__()`
   * The environment is provided as an argument
   * Initializes agent's actor and critic neural networks
 
@@ -77,21 +77,21 @@ All hyperparameters are defined in `ppo_agent.py`.
 | `GRADIENT_CLIP` | 5 | Clipping value for gradient clipping during optimization | `ppo_agent.py` |
 
 
-### Network architecture
+### Network Architecture
 
 The network architecture is defined fully in `model.py`.
 
 #### Actor Network
 | Layer    | Input Dim | Output Dim | Activation |                    Notes                      |
 | ---------| --------- | ---------- | ---------- | --------------------------------------------- |
-| `FC1 `    |     33    |     256     |    ReLU    | Input dimension is the dimension of the state space.   |
+| `FC1`    |     33    |     256     |    ReLU    | Input dimension is the dimension of the state space.   |
 | `FC2`     |     256    |     256     |    ReLU    |                                               |
 | `FC3`     |     256   |     4      |    tanh    | Output dimension is the dimension of the action space. Tanh activation is used to keep the actions between -1 and 1, as required by the Reacher environment. |
 
 #### Critic Network
 | Layer    | Input Dim | Output Dim | Activation |                    Notes                      |
 | ---------| --------- | ---------- | ---------- | ---------------------------------------------|
-| `FC1 `    |     33    |     256     |    ReLU    | Input dimension is the state space dimension  |
+| `FC1`    |     33    |     256     |    ReLU    | Input dimension is the state space dimension  |
 | `FC2`     |     256    |     256     |    ReLU    |                                               |
 | `FC3`     |     256   |     1      |    None    | Output dimension is 1 because the action value is a scalar for each state|
 
@@ -110,7 +110,7 @@ To run the notebook, follow these steps:
 
 1. In the second code cell, update the `file_name` argument to the `UnityEnvironment` function with the location of the Reacher environment (`env = UnityEnvironment(file_name=...)`).
 
-1. Run the second code cell to load the Reacher environment and get information about the state and action space. This information is used to instantiate the agent. This cell will print out the dimensions of the state and action spaces, and the number of agents. It will also print out an example state. The states have dimension 33, the actions have dimension 4, and there are 20 agents.
+1. Run the second code cell to load the Reacher environment and get information about the state and action space. This information is used to instantiate the agent. This cell will print out the dimensions of the state and action spaces, and the number of agents. It will also print out an example state.
 
 1. Run the third code cell to train the agent. The code will loop until the maximum number of episodes have been played (specified by `n_episodes`) or the agent achieves an average score of 30.0 or greater over the 100 most recent episodes. If the agent achieves such a score, this cell will save the agent's weights to a file called `solution.pth` and the list of scores to a file called `scores.npy`.
 
@@ -121,7 +121,7 @@ To run the notebook, follow these steps:
 1. The final code cell closes the environment.
 
 ## Results
-### Score plot
+### Score Plot
 ![scores]
 
 The above image shows the plot of the agent's score for each episode (blue) and the running average of the scores of the previous 100 episodes (red). **The agent achieves an average score greater than or equal to 30.0 for 100 episodes after episode 268.**
